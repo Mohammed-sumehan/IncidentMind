@@ -1,0 +1,28 @@
+{
+  "name": "incidentmind",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Backend foundation for IncidentMind",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "client": "npm --prefix client run dev",
+    "client:build": "npm --prefix client run build"
+  },
+  "dependencies": {
+    "@vectorize-io/hindsight-client": "^0.10.1",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.4",
+    "express": "^5.2.1",
+    "groq-sdk": "^1.6.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.3",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
