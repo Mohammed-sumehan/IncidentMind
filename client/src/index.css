@@ -3,14 +3,17 @@
 @tailwind utilities;
 
 :root {
+  color-scheme: light;
+}
+
+.dark {
   color-scheme: dark;
 }
 
 body {
   margin: 0;
-  background-color: #090d16;
-  color: #f1f5f9;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 /* Custom subtle scrollbars */
@@ -20,22 +23,43 @@ body {
 }
 
 ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.dark ::-webkit-scrollbar-track {
   background: #090d16;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #cbd5e1;
   border-radius: 9999px;
 }
 
+.dark ::-webkit-scrollbar-thumb {
+  background: #1e293b;
+}
+
 ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
   background: #334155;
 }
 
+/* Premium Card & Highlight Shadows */
 .glow-card {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.06), 0 1px 2px -1px rgba(0, 0, 0, 0.04), 0 0 0 1px #e2e8f0;
+}
+
+.dark .glow-card {
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 4px 20px -2px rgba(0, 0, 0, 0.5);
 }
 
 .memory-highlight {
+  box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.25), 0 8px 24px -4px rgba(99, 102, 241, 0.12);
+}
+
+.dark .memory-highlight {
   box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.3), 0 8px 30px -4px rgba(99, 102, 241, 0.15);
 }

@@ -112,7 +112,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#090d16] text-slate-100 flex flex-col selection:bg-indigo-500/30 selection:text-indigo-200">
+    <div className="min-h-screen bg-slate-50 dark:bg-[#090d16] text-slate-800 dark:text-slate-100 flex flex-col selection:bg-indigo-500/25 selection:text-indigo-600 dark:selection:text-indigo-200 transition-colors duration-150">
       <Header
         activeTab={activeTab}
         setActiveTab={setActiveTab}
@@ -149,17 +149,17 @@ export const App: React.FC = () => {
         {activeTab === 'memory' && <Memory />}
       </main>
 
-      <footer className="border-t border-surface-border py-6 mt-12 bg-[#090d16] text-xs text-slate-400">
+      <footer className="border-t border-slate-200 dark:border-surface-border py-6 mt-12 bg-white/80 dark:bg-[#090d16] text-xs text-slate-500 dark:text-slate-400 transition-colors duration-150">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex items-center space-x-2">
-            <span className="font-semibold text-slate-300">IncidentMind</span>
+            <span className="font-semibold text-slate-800 dark:text-slate-300">IncidentMind</span>
             <span>—</span>
             <span>AI that remembers how your engineering team solved incidents</span>
           </div>
           <div className="flex items-center space-x-4 font-mono text-[11px]">
-            <span>Memory: <strong className="text-indigo-400">Hindsight Cloud</strong></span>
-            <span>Inference: <strong className="text-violet-400">Groq</strong></span>
-            <span>Status: <strong className="text-emerald-400">Live Backend</strong></span>
+            <span>Memory: <strong className="text-indigo-600 dark:text-indigo-400">Hindsight Cloud</strong></span>
+            <span>Inference: <strong className="text-violet-600 dark:text-violet-400">Groq</strong></span>
+            <span>Status: <strong className="text-emerald-600 dark:text-emerald-400">Live Backend</strong></span>
           </div>
         </div>
       </footer>
