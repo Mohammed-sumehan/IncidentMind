@@ -36,21 +36,21 @@ export const InvestigationProgress: React.FC<InvestigationProgressProps> = ({ is
   if (!isLoading) return null;
 
   return (
-    <div className="w-full bg-surface-100 rounded-2xl border border-surface-border p-6 glow-card transition-all animate-fadeIn">
-      <div className="flex items-center justify-between mb-6 pb-4 border-b border-surface-border">
+    <div className="w-full bg-white dark:bg-surface-100 rounded-2xl border border-slate-200 dark:border-surface-border p-6 glow-card transition-all animate-fadeIn">
+      <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-100 dark:border-surface-border">
         <div className="flex items-center space-x-3">
-          <div className="w-9 h-9 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
+          <div className="w-9 h-9 rounded-xl bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-200 dark:border-indigo-500/20 flex items-center justify-center text-indigo-600 dark:text-indigo-400">
             <Loader2 className="w-5 h-5 animate-spin" />
           </div>
           <div>
-            <h3 className="text-base font-semibold text-white">Investigation in progress...</h3>
-            <p className="text-xs text-slate-400">
-              Querying Hindsight memory bank <span className="font-mono text-indigo-300">incidentmind</span> and synthesizing with Groq
+            <h3 className="text-base font-semibold text-slate-900 dark:text-white">Investigation in progress...</h3>
+            <p className="text-xs text-slate-500 dark:text-slate-400">
+              Querying Hindsight memory bank <span className="font-mono text-indigo-600 dark:text-indigo-300 font-medium">incidentmind</span> and synthesizing with Groq
             </p>
           </div>
         </div>
-        <div className="flex items-center space-x-1.5 text-xs text-indigo-400 font-mono px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20">
-          <span className="w-2 h-2 rounded-full bg-indigo-400 animate-ping" />
+        <div className="flex items-center space-x-1.5 text-xs text-indigo-700 dark:text-indigo-400 font-mono px-3 py-1 rounded-full bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-200 dark:border-indigo-500/20">
+          <span className="w-2 h-2 rounded-full bg-indigo-500 dark:bg-indigo-400 animate-ping" />
           <span>Real-time synthesis</span>
         </div>
       </div>
@@ -67,19 +67,19 @@ export const InvestigationProgress: React.FC<InvestigationProgressProps> = ({ is
               key={step.id}
               className={`flex items-center space-x-3 p-3 rounded-xl transition-all duration-300 ${
                 isCurrent
-                  ? 'bg-indigo-950/40 border border-indigo-500/30 shadow-sm shadow-indigo-500/10'
+                  ? 'bg-indigo-50/80 dark:bg-indigo-950/40 border border-indigo-200 dark:border-indigo-500/30 shadow-sm'
                   : isDone
-                  ? 'bg-surface-200/50 border border-surface-border/40 opacity-80'
+                  ? 'bg-slate-50 dark:bg-surface-200 border border-slate-200/80 dark:border-surface-border/40 opacity-85 dark:opacity-80'
                   : 'opacity-40 border border-transparent'
               }`}
             >
               <div className="flex items-center justify-center w-7 h-7 rounded-lg shrink-0">
                 {isDone ? (
-                  <CheckCircle2 className="w-5 h-5 text-emerald-400" />
+                  <CheckCircle2 className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
                 ) : isCurrent ? (
-                  <Loader2 className="w-5 h-5 text-indigo-400 animate-spin" />
+                  <Loader2 className="w-5 h-5 text-indigo-600 dark:text-indigo-400 animate-spin" />
                 ) : (
-                  <div className="w-2 h-2 rounded-full bg-slate-600" />
+                  <div className="w-2 h-2 rounded-full bg-slate-400 dark:bg-slate-600" />
                 )}
               </div>
 
@@ -88,19 +88,19 @@ export const InvestigationProgress: React.FC<InvestigationProgressProps> = ({ is
                   <Icon
                     className={`w-4 h-4 ${
                       isCurrent
-                        ? 'text-indigo-400'
+                        ? 'text-indigo-600 dark:text-indigo-400'
                         : isDone
-                        ? 'text-emerald-400/80'
-                        : 'text-slate-500'
+                        ? 'text-emerald-600 dark:text-emerald-400/80'
+                        : 'text-slate-400 dark:text-slate-500'
                     }`}
                   />
                   <span
                     className={`text-sm font-medium ${
                       isCurrent
-                        ? 'text-white font-semibold'
+                        ? 'text-slate-900 dark:text-white font-semibold'
                         : isDone
-                        ? 'text-slate-300'
-                        : 'text-slate-500'
+                        ? 'text-slate-700 dark:text-slate-300'
+                        : 'text-slate-400 dark:text-slate-500'
                     }`}
                   >
                     {step.label}
@@ -108,9 +108,9 @@ export const InvestigationProgress: React.FC<InvestigationProgressProps> = ({ is
                 </div>
 
                 <div className="text-xs font-mono">
-                  {isDone && <span className="text-emerald-400 text-[11px]">Completed</span>}
-                  {isCurrent && <span className="text-indigo-400 text-[11px] animate-pulse">Running</span>}
-                  {isPending && <span className="text-slate-600 text-[11px]">Queued</span>}
+                  {isDone && <span className="text-emerald-600 dark:text-emerald-400 text-[11px] font-semibold">Completed</span>}
+                  {isCurrent && <span className="text-indigo-600 dark:text-indigo-400 text-[11px] font-semibold animate-pulse">Running</span>}
+                  {isPending && <span className="text-slate-400 dark:text-slate-600 text-[11px]">Queued</span>}
                 </div>
               </div>
             </div>
@@ -120,3 +120,4 @@ export const InvestigationProgress: React.FC<InvestigationProgressProps> = ({ is
     </div>
   );
 };
+export default InvestigationProgress;
